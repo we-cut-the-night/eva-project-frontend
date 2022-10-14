@@ -3,7 +3,6 @@ import './Footer.css';
 function Footer() {
   return (
     <footer className='footer'>
-      <p className='footer__title'>EVA PROJECT MVP</p>
       <nav className='footer__content'>
         <p className="footer__copy">&copy;{new Date().getFullYear()}</p>
         <ul className='footer__links'>

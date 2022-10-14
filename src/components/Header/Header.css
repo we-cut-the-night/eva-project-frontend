@@ -2,45 +2,88 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 0 0 auto;
-  padding: 18px 70px;
+  margin: 0;
+  padding: 0 15px;
+  width: 100%;
+  height: 70px;
   background-color: transparent;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(0, 0, 0, .33);
+}
+
+.header__logo {
+  margin: 0;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  border: 2px solid rgb(1, 167, 77);
+  border-radius: 35px;
+  transition: opacity .4s;
+}
+
+.header__logo-link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 29px;
+  white-space: nowrap;
+  color: #262626;
+  text-decoration: none;
 }
 
 .header__logo:hover {
   opacity: 0.7;
 }
 
-.header__navigation-button {
+.header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
   margin: 0;
-  padding: 8px 20px;
+  padding: 0 0 0 50px;
   font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 16px;
+  line-height: 29px;
+}
+
+.header__nav-select{
+  border-color: #FFF;
+  cursor: pointer;
+  outline: none;
+}
+
+.header__nav-settings {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__nav-link {
+  margin: 0 10px 0 0;
   color: #000;
   text-decoration: none;
 }
 
-.header__navigation-button_dark {
-  border-radius: 3px;
-  background-color: #3456F3;
+.header__account {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
   color: #FFF;
-  transition: .4s;
+  background-color: #01A74D;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: opacity .4s;
 }
 
-.header__navigation-button_dark:hover {
+.header__account:hover {
   opacity: .8;
-}
-
-@media screen and ( max-width: 830px ) {
-  .header {
-    padding: 18px 30px;
-  }
-}
-
-@media screen and ( max-width: 530px ) {
-  .header {
-    box-sizing: border-box;
-    padding: 18px 14px;
-  }
 }

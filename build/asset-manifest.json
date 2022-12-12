@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.84ea4b72.css",
+    "main.js": "/static/js/main.2a0d311f.js",
+    "static/media/Inter-Medium.woff": "/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
+    "static/media/Inter-Black.woff": "/static/media/Inter-Black.c6938660eec019fefd68.woff",
+    "static/media/Inter-Regular.woff": "/static/media/Inter-Regular.8c206db99195777c6769.woff",
+    "static/media/id5.jpg": "/static/media/id5.a401827e89cd7eda4ead.jpg",
+    "static/media/Inter-Medium.woff2": "/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
+    "static/media/Inter-Black.woff2": "/static/media/Inter-Black.15ca31c0a2a68f76d2d1.woff2",
+    "static/media/Inter-Regular.woff2": "/static/media/Inter-Regular.c8ba52b05a9ef10f4758.woff2",
+    "static/media/id1.jpg": "/static/media/id1.f0b544df9258e82cec2c.jpg",
+    "static/media/id4.jpg": "/static/media/id4.2693a30d4e05ffc03823.jpg",
+    "static/media/id3.jpg": "/static/media/id3.533f0f6795a601807eca.jpg",
+    "static/media/signin-pic.svg": "/static/media/signin-pic.d4b6b7f489167a6945dc.svg",
+    "static/media/icon_phone.svg": "/static/media/icon_phone.6228d21385a49ac41858.svg",
+    "static/media/employees.svg": "/static/media/employees.89f7b404ae70341147ace28d902690e5.svg",
+    "static/media/calendar.svg": "/static/media/calendar.c836c89481d45d4a3242ba64da8e8c46.svg",
+    "static/media/chart.svg": "/static/media/chart.e22fc586029b53b73e5f445eab318f0a.svg",
+    "static/media/empl-list-icon.svg": "/static/media/empl-list-icon.c81a899cca3e4c3ef066ff169d024708.svg",
+    "static/media/icon_email.svg": "/static/media/icon_email.5154240293b28247111b.svg",
+    "static/media/exit.svg": "/static/media/exit.eea4ce5a35702f57e774b566583188ad.svg",
+    "static/media/search-icon.svg": "/static/media/search-icon.ed4d88fca5f85ebbd9f4.svg",
+    "static/media/gear.svg": "/static/media/gear.0b911965554719bd52d5f3fa2c78e263.svg",
+    "index.html": "/index.html",
+    "static/media/shift_12.svg": "/static/media/shift_12.16fca55341e497549de4b1be45c561d8.svg",
+    "static/media/shift_11.svg": "/static/media/shift_11.291107b8455d47de6767c8bc4bbb22ea.svg",
+    "main.84ea4b72.css.map": "/static/css/main.84ea4b72.css.map",
+    "main.2a0d311f.js.map": "/static/js/main.2a0d311f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.84ea4b72.css",
+    "static/js/main.2a0d311f.js"
+  ]
+}

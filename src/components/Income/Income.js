@@ -1,23 +1,14 @@
-import { useState, useEffect, useContext } from 'react';
-import { CurrentUserContext } from '../../contexts/CurrentUserContext';
-import Navigation from '../Navigation/Navigation';
+import PageHeader from '../PageHeader/PageHeader';
 import './Income.css';
 
-function Income() {
-
-  // Контекст
-  const user = useContext(CurrentUserContext);
-
-  // Эффекты
-  useEffect(() => {
-
-  }, [user]);
-
+function Income({data}) {
   return (
-      <main className='main'>
-        <Navigation />
-        <h2>Расчетный лист</h2>
-      </main>
+    <main className='income'>
+      <section className='income__content'>
+        <PageHeader text='Финансы' />
+        <p>{data ? '' : 'Данные об начислениях отсутствуют'}</p>
+      </section>
+    </main>
   );
 }
 

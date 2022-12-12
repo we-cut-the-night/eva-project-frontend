@@ -1,0 +1,55 @@
+.profile-widgets {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.profile-widgets__widget {
+  min-width: 40%;
+  height: calc(100% - 30px);
+  align-items: start;
+  margin: 0;
+  padding: 20px 30px 10px 30px;
+  min-height: 120px;
+  border-radius: 20px;
+  background-color: transparent;
+  text-decoration: none;
+  color: #000;
+  transition: box-shadow .4s, transform .4s;
+}
+
+.profile-widget__title {
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.profile-widgets__widget:hover {
+  box-shadow: 0 0 10px rgb(0, 0, 0, .25);
+}
+
+.profile-widgets__widget_size_big {
+  grid-row: span 2;
+}
+
+.profile-widgets__widget_theme_red {
+  background: linear-gradient(90deg, rgba(224, 120, 124, 0.22) 0%, rgba(227, 223, 164, 0.22) 100%);
+}
+
+.profile-widgets__widget_theme_aqua {
+  background: linear-gradient(90deg, rgba(143, 193, 169, .22) 10%, rgba(177, 211, 227, .22) 100%);
+}
+
+.profile-widgets__widget_theme_cloud {
+  background: linear-gradient(90deg, rgba(183, 174, 195, 0.22) 0%, rgba(177, 211, 227, 0.22) 100%);
+}
+
+.profile-widgets__widget_theme_grass {
+  background: linear-gradient(90deg, rgba(227, 223, 164, 0.22) 0%, rgba(177, 211, 227, 0.22) 100%);
+}
+
+.profile-widgets__widget_theme_park {
+  background: linear-gradient(90deg, rgba(218, 183, 184, 0.22) 0%, rgba(143, 193, 169, 0.22) 100%);
+}

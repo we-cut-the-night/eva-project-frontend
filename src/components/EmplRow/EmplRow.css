@@ -1,0 +1,58 @@
+.empl-row {
+  min-height: 50px;
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr 2fr 3fr 1fr;
+  border-bottom: 2px solid #E8E8E8;
+  font-size: 14px;
+  color: rgba(38, 38, 38, .5);
+}
+
+.empl-row:hover {
+  background-color: rgba(217, 217, 217, .2);
+}
+
+.empl-row_type_self {
+  background-color: rgba(217, 217, 217, .2);
+}
+
+.empl-row__link {
+  margin: auto auto auto 0;
+  text-decoration: none;
+  color: rgba(38, 38, 38, .5);
+}
+
+.empl-row__mark {
+  margin: auto;
+  width: 10px;
+  height: 10px;
+  background-color: #8FC1A9;
+  border: none;
+  border-radius: 50%;
+}
+
+.empl-row__name {
+  margin: auto auto auto 0;
+  font-size: 16px;
+}
+
+.empl-row__name_type_self {
+  color: #01A74D;
+}
+
+.empl-row__role {
+  margin: auto auto auto 0;
+}
+
+.empl-row__birth {
+  margin: auto;
+}
+
+.empl-row__phone {
+  margin: auto;
+}
+
+.empl-row__link-icon {
+  margin: 0 0 0 20px;
+  width: 15px;
+  height: 15px;
+}

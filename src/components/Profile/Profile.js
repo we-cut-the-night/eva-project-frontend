@@ -1,189 +1,94 @@
-import { useState, useEffect, useContext } from 'react';
-import { CurrentUserContext } from '../../contexts/CurrentUserContext';
-import Navigation from '../Navigation/Navigation';
+import { useState, useEffect } from 'react';
+import { useParams } from "react-router";
+import { PHOTOS } from '../../utils/employees';
+import { getEmplName, getDate, getEmplAge } from '../../utils/functions';
+import { getEmployeeById } from '../../utils/MainApi';
+import ProfileHeader from '../ProfileHeader/ProfileHeader';
+import ProfileWidgetList from '../ProfileWidgetList/ProfileWidgetList';
 import './Profile.css';
 
 function Profile() {
+  const params = useParams();
+  const currentId = params.id;
+  const [employee, setEmployee] = useState({});
+  const [tags, setTags] = useState([]);
 
-  // Контекст
-  const user = useContext(CurrentUserContext);
+  const [headerData, setHeaderData] = useState({
+    photo: null,
+    lastname: null,
+    firstname: null,
+    birth: null,
+    location: null,
+    datestart: null
+  });
 
-  // Аккаунт
-  const [userEmail, setUserEmail] = useState('');
-  const [userName, setUserName] = useState('');
-  const [dateBirth, setDateBirth] = useState('');
-  const [dateStart, setDateStart] = useState('');
-  const [emplType, setEmplType] = useState('');
-  const [userRole, setUserRole] = useState('');
-  const [emplAdd, setEmplAdd] = useState('');
-  const [emplGrade, setEmplGrade] = useState('');
+  const [widgetsData, setWidgetsData] = useState({
+    role: null,
+    address: null,
+    tags: [],
+    todo: [],
+    responsiblefor: [],
+    workwidth: [],
+    aboutme: null,
+    contacts: [],
+    socials: []
+  });
 
-  // Контакты
-  const [contacts, setContacts] = useState({});
-
-  // Документы
-  const [docs, setDocs] = useState({});
-
-  // Организация
-  const [orgName, setOrgName] = useState(null);
-  const [orgDepart, setOrgDepart] = useState(null);
-  const [orgSpot, setOrgSpot] = useState(null);
-
-  // Гранты
-  const [grants, setGrants] = useState('');
-
-  const handleChangeName = (e) => {
-    setUserName(e.target.value);
+  const getEmployeeData = (id) => {
+    getEmployeeById(id)
+      .then(data => {
+        setEmployee(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
-  const handleChangeEmail = (e) => {
-    setUserEmail(e.target.value);
+  const getHeaderData = (user, photos) => {
+    const data = {
+      photo: photos[currentId - 1],
+      lastname: user.lastname,
+      firstname: getEmplName(user.firstname, user.middlename),
+      birth: 'Дата рождения: ' + getDate(user.birth, '/') + ' | ' + getEmplAge(user.birth),
+      location: 'Город: ' + user.location,
+      datestart: 'Работает с ' + new Date(user.datestart).getFullYear() + ' года'
+    };
+
+    setHeaderData(data);
   };
 
-  const handleChangeRole = (e) => {
-    setUserRole(e.target.value);
+  const getWidgetsData = (user) => {
+    const data = {
+      role: user.role,
+      address: typeof user.spot !== 'undefined' ? user.spot?.address : '',
+      tags: [user.role, typeof user.spot !== 'undefined' && user.spot.name, user.depart],
+      todo: [],
+      responsiblefor: [],
+      workwidth: [],
+      aboutme: null,
+      contacts: [],
+      socials: []
+    };
+
+    setWidgetsData(data);
   };
 
-  const handleChange = (e) => {
-    // console.log(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Submit')
-  };
-
-  // Эффекты
   useEffect(() => {
+    if (employee) {
+      getHeaderData(employee, PHOTOS);
+      getWidgetsData(employee);
+    };
+  }, [employee]);
 
-    // Аккаунт
-    setUserName(user.empl_name);
-    setUserEmail(user.account_email);
-    setDateBirth(user.empl_birth);
-    setDateStart(user.empl_start);
-    setEmplType(user.empl_type);
-    setUserRole(user.empl_role);
-    setEmplAdd(user.empl_add);
-    setEmplGrade(user.empl_grade);
-
-    // Контакты
-    setContacts(user.empl_contacts);
-
-    // Документы
-    setDocs(user.empl_docs);
-
-    // Организация
-    setOrgName(user.org_name);
-    setOrgDepart(user.org_depart);
-    setOrgSpot(user.org_spot);
-
-    // Гранты
-    setGrants(user.empl_grants);
-
-  }, [user]);
+  useEffect(() => {
+    currentId && getEmployeeData(currentId);
+  }, [currentId]);
 
   return (
-    <div className='profile'>
-      <Navigation />
-      <main className='profile__main'>
-        <form className='profile__form' onSubmit={handleSubmit}>
-          <fieldset className='profile__fieldset'>
-            <label htmlFor='name' className='profile__form-label'>ФИО</label>
-            <input
-              id='name'
-              name='name'
-              type='text'
-              className='profile__form-input'
-              placeholder={userName}
-              value={typeof userName === 'undefined' ? '' : userName}
-              onChange={handleChangeName}
-              required
-            />
-          </fieldset>
-          <fieldset className='profile__fieldset'>
-            <label htmlFor='email' className='profile__form-label'>E-mail</label>
-            <input
-              id='email'
-              name='email'
-              type='email'
-              className='profile__form-input'
-              placeholder={userEmail}
-              value={typeof userEmail === 'undefined' ? '' : userEmail}
-              onChange={handleChangeEmail}
-              required
-            />
-          </fieldset>
-          <fieldset className='profile__fieldset'>
-            <label htmlFor='date-birth' className='profile__form-label'>Дата рождения</label>
-            <input
-              id='date-birth'
-              type='text'
-              className='profile__form-input'
-              placeholder={dateBirth}
-              value={typeof dateBirth === 'undefined' ? '' : dateBirth}
-              onChange={handleChange}
-            />
-          </fieldset>
-          <fieldset className='profile__fieldset'>
-            <label htmlFor='date-start' className='profile__form-label'>Дата трудоустройства</label>
-            <input
-              id='date-start'
-              type='text'
-              className='profile__form-input'
-              placeholder={dateStart}
-              value={typeof dateStart === 'undefined' ? '' : dateStart}
-              onChange={handleChange}
-            />
-          </fieldset>
-          <fieldset className='profile__fieldset'>
-            <label htmlFor='empl-type' className='profile__form-label'>Тип занятости</label>
-            <input
-              id='empl-type'
-              type='text'
-              className='profile__form-input'
-              placeholder={emplType}
-              value={typeof emplType === 'undefined' ? '' : emplType}
-              onChange={handleChange}
-            />
-          </fieldset>
-          <fieldset className='profile__fieldset'>
-            <label htmlFor='email' className='profile__form-label'>Должность</label>
-            <input
-              id='role'
-              name='role'
-              type='text'
-              className='profile__form-input'
-              placeholder={userRole}
-              value={typeof userRole === 'undefined' ? '' : userRole}
-              onChange={handleChangeRole}
-              required
-            />
-          </fieldset>
-          <fieldset className='profile__fieldset'>
-            <label htmlFor='empl-add' className='profile__form-label'>Дополнительные обязанности</label>
-            <input
-              id='empl-add'
-              type='text'
-              className='profile__form-input'
-              placeholder={emplAdd}
-              value={typeof emplAdd === 'undefined' ? '' : emplAdd}
-              onChange={handleChange}
-            />
-          </fieldset>
-          <fieldset className='profile__fieldset'>{console.log(contacts)}
-            <label htmlFor='empl-address' className='profile__form-label'>Адрес</label>
-            <input
-              id='empl-address'
-              type='text'
-              className='profile__form-input'
-              placeholder={contacts}
-              value={typeof contacts === 'undefined' ? '' : contacts}
-              onChange={handleChange}
-            />
-          </fieldset>
-        </form>
-      </main>
-    </div>
+    <main className='profile'>
+      <ProfileHeader data={headerData} />
+      <ProfileWidgetList data={widgetsData} />
+    </main>
   );
 }
 

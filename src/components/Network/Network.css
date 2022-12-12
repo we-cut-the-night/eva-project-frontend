@@ -1,0 +1,40 @@
+.network {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+.network__content {
+  margin: 0;
+  padding: 40px 30px 30px 60px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.network__header{
+  margin: 0 0 30px 0;
+  display: flex;
+  align-items: center;
+}
+
+.network__filters-icon {
+  margin: 2px 5px 2px 10px;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+
+.network__filters {
+  font-size: 14px;
+  text-align: center;
+  color: #000;
+}
+
+.network__empl-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

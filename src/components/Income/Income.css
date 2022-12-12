@@ -1,0 +1,12 @@
+.income {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.income__content {
+  margin: 0;
+  padding: 40px 30px 30px 60px;
+  width: 100%;
+}

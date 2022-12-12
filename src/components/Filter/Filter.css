@@ -1,0 +1,26 @@
+.filter__select {
+  margin: 0 15px 0 0;
+  height: 30px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  appearance: none;
+}
+
+.filter__select_name_year {
+  background-color: rgba(218, 183, 184, .2);
+}
+
+.filter__select_name_month {
+  background-color: rgba(218, 183, 184, .2);
+}
+
+.filter__select_name_spot {
+  background-color: rgba(218, 183, 184, .2);
+}
+
+.filter__select_name_depart {
+  background-color: rgba(218, 183, 184, .2);
+}

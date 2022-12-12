@@ -1,0 +1,25 @@
+.tip {
+  margin: 50px 0 0 auto;
+  padding: 20px 20px;
+  max-width: 350px;
+  border-radius: 15px;
+  border: 2px solid #8FC1A9;
+}
+
+.tip__title {
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: #01A74D;
+}
+
+.tip__content-list {
+  margin: 0;
+  padding: 0;
+}
+
+.tip__content-item {
+  margin: 0 0 10px;
+  padding: 0;
+  font-size: 14px;
+  list-style: none;
+}

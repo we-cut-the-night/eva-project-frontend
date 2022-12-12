@@ -1,0 +1,151 @@
+.signin {
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #EEEEEE;
+}
+
+.signin__wrapper {
+  margin: 0;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  background-color: #FFF;
+  border-radius: 15px;
+  border: 3px solid rgba(143, 193, 169, 0.5);
+}
+
+.signin__form {
+  margin: 0;
+  padding: 50px 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.signin__header {
+  margin: 0 0 40px;
+  font-size: 28px;
+  font-weight: 500px;
+}
+
+.signin__input {
+  margin: 0 0 40px;
+  padding: 5px 0;
+  border: none;
+  border-bottom: 3px solid #8FC1A9;
+}
+
+.signin__input:focus {
+  outline: none;
+}
+
+.signin__input:last-of-type {
+  margin: 0 0 20px;
+}
+
+.signin__input_error {
+  border-bottom: 3px solid #FF4062;
+}
+
+.signin__error{
+  position: absolute;
+  bottom: 10px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #FF4062;
+  margin: 0;
+}
+
+.signin__remember {
+  margin: 0 0 20px;
+  display: flex;
+}
+
+.signin__checkbox {
+  display: none;
+}
+
+.signin__checkbox-custom {
+  margin: 0;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #D9D9D9;
+  border-radius: 3px;
+}
+
+.signin__checkbox-subtitle {
+  margin: 0 0 0 5px;
+  font-size: 14px;
+  color: #D9D9D9;
+}
+
+.signin__submit {
+  margin: 0;
+  width: 200px;
+  min-width: 100px;
+  min-height: 45px;
+  background-color: #01A74D;
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  transition: opacity .4s;
+  cursor: pointer;
+}
+
+.signin__submit:hover {
+  opacity: .7;
+}
+
+.signin__submit_disabled {
+  background-color: #c7c7c7;
+  cursor: default;
+}
+
+.signin__submit_disabled:hover {
+  opacity: 1;
+}
+
+.signin__pic {
+  width: 100%;
+  height: 100%;
+  background-image: url('../../images/signin-pic.svg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+.signin__test-user {
+  margin: 40px 0 0 0;
+  padding: 10px 80px;
+  color: grey;
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.signin__test-user:hover {
+  color: #01A74D;
+  border: 1px solid #01A74D;
+  background-color: rgba(255, 255, 255, .2);
+}
+
+.signin__test-description {
+  text-align: center;
+  width: 600px;
+  opacity: 0;
+}
+
+.signin__test-user:hover + .signin__test-description {
+  opacity: .5;
+}

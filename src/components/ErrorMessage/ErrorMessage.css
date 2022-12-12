@@ -1,0 +1,22 @@
+.error-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
+  position: absolute;
+  bottom: 20px; right: 30px;
+  width: 300px;
+  min-height: 50px;
+  font-size: 14px;
+  color: red;
+  background-color: #EEEEEE;
+  border-radius: 15px;
+  border: 1px solid red;
+  opacity: .8;
+  transition: opacity .4s;
+}
+
+.error-message_type_disabled {
+  display: none;
+};

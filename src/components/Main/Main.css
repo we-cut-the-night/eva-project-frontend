@@ -1,80 +1,45 @@
-.main {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  height: calc(100vh - 70px);
-}
-
 .main__content {
+  margin: 0;
+  padding: 40px 50px 30px 50px;
+  width: 100%;
+  min-height: min-content;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  margin: 0;
-  padding: 50px 0 0 50px;
-  width: 100%;
 }
 
 .main__link {
   text-decoration: none;
 }
 
-.main__card {
-  display: flex;
-  min-width: 40%;
-  align-items: start;
-  margin: 0 30px 30px 0;
-  padding: 20px;
-  border: 1px solid rgb(0, 0, 0, .1);
-  border-radius: 15px;
-  background-color: transparent;
-  cursor: pointer;
-  text-decoration: none;
-  color: #000;
-  transition: box-shadow .3s;
-}
-
-.main__card:hover {
-  box-shadow: 0 0 20px rgb(0, 0, 0, .1);;
-}
-
 .main__card-profile {
   margin: 0 auto 30px 0;
 }
 
-.main__photo {
-  margin: 0 30px 0 0;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.main__bio {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-}
-
-.main__bio-title {
-  margin: 0 0 20px;
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 21px;
-  text-align: left;
-}
-
-.main__bio-description {
-  margin: 0 0 7px;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
-  text-align: left;
-  color:rgb(0, 0, 0);
-}
-
 .main__widgets {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
   width: 100%;
+  max-width: 1000px;
+}
+
+.main__widgets-list {
+  margin: 0;
+  padding: 0;
+}
+
+.main__widgets-content {
+  margin: 0 0 8px;
+  font-size: 16px;
+  list-style: none;
+}
+
+.main__widgets-link {
+  text-decoration: none;
+}
+
+.main__widgets-link_size_big {
+  grid-column: span 2;
 }
 
 .main__schedule {
